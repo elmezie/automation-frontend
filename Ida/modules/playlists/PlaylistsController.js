@@ -21,27 +21,29 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,debounce
     $scope.stopped = false
 
     $scope.x = 1;
-    $scope.incrementDataInService= function(type) {
-        console.log("incrementDataInService playlistController")
-        $scope.rightMenuTemplate = (type == 'video') ? 'templates/videomenu.html' : 'templates/musicmenu.html'
-        if(type == 'video'){
-            $scope.playlistdata = [
-                {item : 'All movies'},
-                {item : 'Recently Released'},
-                {item : 'Recently Added'},
-                {item : 'Recently Viewed'},
-                {item : 'On Deck'},
-                {item : 'By Rating'},
-                {item : 'By Folder'},
-                {item : 'Genre'}
-            ]  
-        }else{
-            myService.getPlaylist().then(function(data){
-                $scope.playlistdata = data
-            });
-        }
+    // $scope.incrementDataInService= function(type) {
+    //     console.log("incrementDataInService playlistController")
+    //     $scope.rightMenuTemplate = (type == 'video') ? 'templates/videomenu.html' : 'templates/musicmenu.html'
+    //     // console.log($scope.rightMenuTemplate)
+
+    //     if(type == 'video'){
+    //         $scope.playlistdata = [
+    //             {item : 'All movies'},
+    //             {item : 'Recently Released'},
+    //             {item : 'Recently Added'},
+    //             {item : 'Recently Viewed'},
+    //             {item : 'On Deck'},
+    //             {item : 'By Rating'},
+    //             {item : 'By Folder'},
+    //             {item : 'Genre'}
+    //         ]  
+    //     }else{
+    //         myService.getPlaylist().then(function(data){
+    //             $scope.playlistdata = data
+    //         });
+    //     }
         
-    }
+    // }
 
 
     $scope.updateNewFn = function(msg){
@@ -83,6 +85,13 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,debounce
 
     }) 
 
+    $scope.change_player_mode = function(mode){
+        console.log("player mode :" + mode)
+        PlaylistsService.changePlayerMode(mode).then(function(data){
+            console.log('mode changed')
+            console.log(data)
+        })
+    }
     
     $scope.togglePlay = function(){
         PlaylistsService.togglePlay();
@@ -95,26 +104,39 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,debounce
     }    
     $scope.initTest = function(){
         //var myResource = $resource('http://192.168.1.7:5000/music/track');
-        $scope.poller1 = poller.get(greet1, {action: 'jsonp_get', delay: 1400});
+        $scope.poller1 = poller.get(greet1, {action: 'jsonp_get', delay: 60000});
         $scope.poller1.promise.then(null, null, function (data) {
             $scope.currentTrackInfo = data.objects
-            //$scope.data1 = data;
-            //console.dir(data.objects)
-            $scope.data = data.objects.elapsed
+            // //$scope.data1 = data;
+            // //console.dir(data.objects)
+            //$scope.data = data.objects.elapsed
+            switch(data.objects.mode){
+                case "stop":
+                    $scope.playerMode = 'ion-play'
+                break;
+                case "pause":
+                    $scope.playerMode = 'ion-play'
+                break;
+                case "play":
+                    $scope.playerMode = 'ion-pause'
+                break;
+
+
+            }
 
             $scope.someObj = { data: data.objects.elapsed };
-            $scope.max = data.objects.duration
-            $scope.knobOptions = {
-                'width':200,
-                'displayInput': true,
-                'max': 20,
-                'fgColor':"#66CC66",
-                'skin':'tron',
-                'thickness':'.3',
-                'angleOffset':-125,
-                'angleArc':250
+            // $scope.max = data.objects.duration
+            // $scope.knobOptions = {
+            //     'width':200,
+            //     'displayInput': true,
+            //     'max': 20,
+            //     'fgColor':"#66CC66",
+            //     'skin':'tron',
+            //     'thickness':'.3',
+            //     'angleOffset':-125,
+            //     'angleArc':250
 
-            }; 
+            // }; 
            
         });
         
@@ -222,7 +244,7 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,debounce
    $scope.back = function() { 
         // Disable the poller
         console.log('going going back back')
-        //$scope.poller1.stop()   
+        $scope.poller1.stop()   
         
         window.history.back();
     };    

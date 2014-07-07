@@ -4,7 +4,10 @@ angular.module('Dashboard',[]).controller('DashboardCtrl', function($scope,$ioni
     var current_page = $location.url()
     ionic.Platform.fullScreen() 
    
-    $scope.rightMenuTemplate = 'templates/videomenu.html'
+    //$scope.rightMenuTemplate = 'templates/videomenu.html'
+    $scope.rightMenuTemplate = (current_page == '/app/music') ? 'templates/musicmenu.html' : 'templates/videomenu.html'
+
+
     $scope.hideSidemenuBackButton = true;
     var videoFilters = new Array();
     var videoFilter = {};
@@ -17,7 +20,7 @@ angular.module('Dashboard',[]).controller('DashboardCtrl', function($scope,$ioni
         // myService.getPlaylist().then(function(data){
         //     $scope.playlistdata = data
         // });
-        //$scope.rightMenuTemplate = (type == 'video') ? 'templates/videomenu.html' : 'templates/musicmenu.html'
+        $scope.rightMenuTemplate = (type == 'video') ? 'templates/videomenu.html' : 'templates/musicmenu.html'
         
         if(type == 'video'){
             VideoService.getMenu().then(function(result){
@@ -229,7 +232,7 @@ angular.module('Dashboard',[]).controller('DashboardCtrl', function($scope,$ioni
             { text: 'Cancel' },
             {
                 text: '<b>Save</b>',
-                type: 'button-positive',
+                type: 'button-energized',
                 onTap: function(e) {
                     if (!$scope.data.playlistname) {
                     //don't allow the user to close unless he enters wifi password

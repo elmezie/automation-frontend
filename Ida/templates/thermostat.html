@@ -11,10 +11,11 @@
                 <ion-view title="Account">
 				<ion-content class="has-header" ng-init="loadValues()">
                 <div style="margin-top:1em;">
-                    <div class="range" style="height:300px;width:250px;margin:0 auto;" >
-                        <knob knob-data="someObj.temp" ng-model="someObj.temp" update-fn="updateFn(someObj.temp)" update-newfn="updateNewFn(someObj.temp)"  knob-max='max' knob-options="knobOptions"></knob>
-                        {{someObj.temp}}
-                    </div>
+    <div class="range">
+        <i class="icon ion-volume-low"></i>
+        <input type="range" name="volume" ng-model="data.volume">
+        <i class="icon ion-volume-high"></i>
+      </div>
                 </div> 
 
                         <div style="text-align:center;">

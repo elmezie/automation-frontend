@@ -1,0 +1,9 @@
+[0707/123630:WARNING:resource_bundle.cc(303)] locale_file_path.empty()
+[0707/131011:ERROR:cef_context.cc(458)] No localized string available for id 18010
+[0707/131011:ERROR:cef_context.cc(458)] No localized string available for id 18012
+[0707/131012:ERROR:cef_context.cc(458)] No localized string available for id 18010
+[0707/131012:ERROR:cef_context.cc(458)] No localized string available for id 18012
+[0707/131012:ERROR:cef_context.cc(458)] No localized string available for id 18012
+[0707/131012:ERROR:cef_context.cc(458)] No localized string available for id 18012
+[0707/131012:ERROR:cef_context.cc(458)] No localized string available for id 18012
+[0707/145738:WARNING:resource_bundle.cc(303)] locale_file_path.empty()

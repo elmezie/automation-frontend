@@ -32,22 +32,24 @@ angular.module('Remote',[]);
 var MainApp = angular.module('MainApp', ['ui.knob', 'emguo.poller','ngResource','rt.debounce', 'ionic','Dashboard','Playlists','Video','Thermostat','Remote']);
 MainApp.run(function($ionicPlatform) {
     
-  $ionicPlatform.ready(function() {
-    $ionicPlatform.fullScreen();
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-    StatusBar.hide();
+  // $ionicPlatform.ready(function() {
 
-  });
+  //   $ionicPlatform.fullScreen();
+  //   // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+  //   // for form inputs)
+  //   if(window.cordova && window.cordova.plugins.Keyboard) {
+  //     cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+  //   }
+  //   if(window.StatusBar) {
+  //     StatusBar.styleDefault();
+  //   }
+
+  //   StatusBar.hide();
+
+  // });
 
 });
-MainApp.constant("API_URL","http://automation.vi-dev.net")
+MainApp.constant("API_URL","http://192.168.1.7")
 MainApp.constant("API_PORT", "5001")
 MainApp
 .factory('greet1', function ($resource,API_URL,API_PORT) {

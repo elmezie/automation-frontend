@@ -1,0 +1,27 @@
+  <ion-side-menu side="right">
+    <header class="bar bar-header bar-stable">
+      <button ng-click="showTopLevelCategories()" ng-class="{ hide: hideSidemenuBackButton }" class="button back-button button-icon icon ion-arrow-left-c button back-button button-icon icon ion-arrow-left-c"  type="backType" label="backLabel" icon="backIcon" style=""><!-- ngIf: icon && label --> </button>    
+      <h1 class="title">Playlist</h1>
+        <!-- <button class="button icon ion-navicon" ng-click="nowPlayingMusic()"></button> -->
+        <button class="button icon ion-ios7-upload-outline no-border" style="font-size:200%;" ng-click="goTo('nowplaying')"></button>
+    </header>
+    <ion-content class="has-header">
+      <ion-list show-reorder="true">
+        <ion-item ng-click="goTo(list.item)" ng-class="{active: isItemActive(list)}" class="item playlistli" style="font-size:14px;" ng-repeat="item in playlistdata">
+            {{item.title}}
+            <ion-reorder-button class="ion-navicon custom-icon"
+                        on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+            </ion-reorder-button>
+        </ion-item>      
+      </ion-list>
+
+      
+    </ion-content>
+    <ion-footer-bar align-title="left" class=" larger_footer_bar bar-stable">
+        <button class="button icon ion-ios7-close no-border" style="font-size:260%;color:#fff;" ng-click="clearMusicPlaylist()"></button>
+        <button class="button icon ion-ios7-compose-outline no-border" style="font-size:260%;color:#fff;" ng-click="savePlaylist()"></button>
+       
+    <!--     <h1 class="title">Title!</h1> -->
+    </ion-footer-bar>
+
+  </ion-side-menu> 

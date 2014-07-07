@@ -3,7 +3,7 @@
       <button ng-click="showTopLevelCategories()" ng-class="{ hide: hideSidemenuBackButton }" class="button back-button button-icon icon ion-arrow-left-c button back-button button-icon icon ion-arrow-left-c"  type="backType" label="backLabel" icon="backIcon" style=""><!-- ngIf: icon && label --> </button>    
       <h1 class="title">123</h1>
         <!-- <button class="button icon ion-navicon" ng-click="nowPlayingMusic()"></button> -->
-        <button class="button icon ion-ios7-upload-outline no-border" ng-click="goTo('nowplaying')"></button>
+        <button class="button icon ion-ios7-upload-outline no-border" style="font-size:200%;" ng-click="goTo('nowplaying')"></button>
     </header>
     <ion-content class="has-header">
       <!-- <ion-list>
@@ -12,7 +12,7 @@
         </ion-item>      
       </ion-list> -->
         <tick-list>
-            <tick-list-item ng-repeat="item in playlistdata"  isTopLevel="0" selected="{{item.selected}}" selected-icon="{{item.selectedIcon}}" model="item" on-change="onchangeViewType(item)">
+            <tick-list-item ng-repeat="item in playlistdata"  class="scroll-item" isTopLevel="0" selected="{{item.selected}}" selected-icon="{{item.selectedIcon}}" model="item" on-change="onchangeViewType(item)">
                     {{item.title}}
             </tick-list-item>
         </tick-list>      
@@ -22,7 +22,7 @@
       </div>
       <!-- Allow multiple selections and overwrite the default checkmark icon -->
         <tick-list multiple="true" selected-icon="ion-checkmark-circled">
-            <tick-list-item ng-click="showSubcategories(item)" isTopLevel="{{item.is_top_level}}" ng-repeat="item in filterData"  selected="{{item.selected}}" selected-icon="{{item.icon}}" model="item" on-change="onItemChanged(item)">
+            <tick-list-item ng-click="showSubcategories(item)" class="scroll-item" isTopLevel="{{item.is_top_level}}" ng-repeat="item in filterData"  selected="{{item.selected}}" selected-icon="{{item.icon}}" model="item" on-change="onItemChanged(item)">
               {{item.title}} </br>
               {{item.selectedFilters}}
             </tick-list-item>

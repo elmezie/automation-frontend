@@ -18,6 +18,20 @@ angular.module('Playlists').factory('PlaylistsService', function($http,$rootScop
         })
     }
 
+    ergastAPI.changePlayerMode = function(mode){
+        return $http({
+            method: "post",
+            headers: { 'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'},
+            transformRequest:transform,
+            url:API_URL+':'+API_PORT+'/music/player',
+            data:{
+                action:'toggle',
+                identifier:mode
+                
+            }
+        })        
+    }
+
     ergastAPI.getApps = function(identifier,start,limit,type){
         //console.log(identifier,start,limit,type)
         return $http({
