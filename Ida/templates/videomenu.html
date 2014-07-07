@@ -1,0 +1,50 @@
+  <ion-side-menu side="right">
+    <header class="bar bar-header bar-stable">
+      <button ng-click="showTopLevelCategories()" ng-class="{ hide: hideSidemenuBackButton }" class="button back-button button-icon icon ion-arrow-left-c button back-button button-icon icon ion-arrow-left-c"  type="backType" label="backLabel" icon="backIcon" style=""><!-- ngIf: icon && label --> </button>    
+      <h1 class="title">123</h1>
+        <!-- <button class="button icon ion-navicon" ng-click="nowPlayingMusic()"></button> -->
+        <button class="button icon ion-ios7-upload-outline no-border" ng-click="goTo('nowplaying')"></button>
+    </header>
+    <ion-content class="has-header">
+      <!-- <ion-list>
+        <ion-item ng-click="goTo(list.item)" ng-class="{active: isItemActive(list)}" class="item item-icon-left" ng-repeat="item in playlistdata">
+            {{item.title}}
+        </ion-item>      
+      </ion-list> -->
+        <tick-list>
+            <tick-list-item ng-repeat="item in playlistdata"  isTopLevel="0" selected="{{item.selected}}" selected-icon="{{item.selectedIcon}}" model="item" on-change="onchangeViewType(item)">
+                    {{item.title}}
+            </tick-list-item>
+        </tick-list>      
+      <div ng-if='hideVideoFilters'>
+      <div class="item item-divider" >
+        Filters
+      </div>
+      <!-- Allow multiple selections and overwrite the default checkmark icon -->
+        <tick-list multiple="true" selected-icon="ion-checkmark-circled">
+            <tick-list-item ng-click="showSubcategories(item)" isTopLevel="{{item.is_top_level}}" ng-repeat="item in filterData"  selected="{{item.selected}}" selected-icon="{{item.icon}}" model="item" on-change="onItemChanged(item)">
+              {{item.title}} </br>
+              {{item.selectedFilters}}
+            </tick-list-item>
+
+        </tick-list>
+        </div>
+                 <!--  <ul class="list fade-in-not-out">
+                <div ng-repeat="item in filterData">
+                    <a ng-if="item.is_top_level" ng-click="showSubcategories(item.filter)" class="item" >{{item.title}}</a>
+                    <a ng-if="!item.is_top_level" ng-click="showSubcategories(item.filter)" class="item" >{{item.title}}</a>
+                </div>
+            </ul> -->
+      
+    </ion-content>
+<!--     <ion-footer-bar align-title="left" class=" larger_footer_bar bar-assertive">
+        <div class="buttons">
+            <button class="button" ng-click="clearMusicPlaylist()">Clear</button>
+        </div>
+        <h1 class="title">Title!</h1>
+        <div class="buttons" ng-click="savePlaylist()">
+            <button class="button">Save</button>
+        </div>
+    </ion-footer-bar> -->
+
+  </ion-side-menu> 

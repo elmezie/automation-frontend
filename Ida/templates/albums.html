@@ -1,0 +1,21 @@
+<ion-view title="Albums">
+    <div>
+        <div ng-include src="'templates/header_partial.html'"></div>
+    </div>
+
+    <ion-content class="has-header">
+          
+        <ion-list>
+            <ion-item class="item scroll-item item-icon-right" ng-repeat="albums in genrelist " href="#/app/music/songs/albums/{{albums.id}}">
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                {{albums.artist}} - {{albums.album}}
+                <!-- <ion-option-button class="button-positive" ng-click="addToPlaylist('{{albums.id}}')">Add to Playlist</ion-option-button> -->
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="hasMoreData" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+
+
+
+
+</ion-view>

@@ -1,0 +1,26 @@
+<ion-view title="Genres">
+    <div>
+        <div ng-include src="'templates/header_partial.html'"></div>
+    </div> 
+    <ion-content class="has-header">
+
+    <ion-list>
+      <ion-item class="item scroll-item item-icon-right " ng-repeat="genre in genrelist | filter:search.genre" href="#/app/music/albums/genre/{{genre.id}}">
+       <i class="icon ion-chevron-right icon-accessory"></i>
+        {{genre.genre}}
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+<!-- 
+  <ion-footer-bar align-title="left" class="larger_footer_bar bar-assertive" ng-if="!hidebars" ng-click="goTo('nowplaying','False')">
+    <h1 class="title">Nas</h1>
+    <h4 class="title">If I ruled the world</h4>
+   
+    <div class="buttons" ng-click="SortList()">
+      <button class="button">Play</button>
+    </div>    
+  </ion-footer-bar>  
+ -->
+
+</ion-view>

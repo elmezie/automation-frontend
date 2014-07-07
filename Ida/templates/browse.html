@@ -1,0 +1,18 @@
+<ion-view title="Music Browse">
+    <div>
+        <div ng-include src="'templates/header_partial.html'"></div>
+    </div>
+    <ion-content class="has-header">
+
+    <ion-list>
+      <ion-item class="item" ng-repeat="folder in genrelist" ng-click="browse('browse',{{folder.id}},'{{folder.type}}','{{folder.url}}')">
+        {{folder.filename}}
+        <ion-option-button class="button-positive" ng-click="addToPlaylist('{{folder.url}}')">Add to Playlist</ion-option-button>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadMore('browse')" ng-if="hasMoreData" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+
+
+
+</ion-view>

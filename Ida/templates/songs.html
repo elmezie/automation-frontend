@@ -1,0 +1,26 @@
+<ion-view title="Songs">
+    <div>
+        <div ng-include src="'templates/header_partial.html'"></div>
+    </div>
+    
+
+
+    <ion-content class="has-header">
+      
+    <ion-list>
+
+      <ion-item  class="item scroll-item" ng-repeat="song in genrelist" ng-click="playSong('{{song.id}}','{{song.url}}')">
+        {{song.tracknum}} - {{song.title}}
+        <ion-option-button class="button-positive" ng-click="addToPlaylist('{{song.url}}','{{song.id}}')">Add to Playlist</ion-option-button>
+      
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="hasMoreData"></ion-infinite-scroll>
+  </ion-content>
+
+
+
+
+
+
+</ion-view>

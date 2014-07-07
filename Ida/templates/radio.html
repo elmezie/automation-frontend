@@ -1,0 +1,48 @@
+<ion-view title="Radio">
+    <div>
+        <div ng-include src="'templates/header_partial.html'"></div>
+    </div>
+    <ion-content class="has-header">
+
+    <ion-list option-buttons="itemButtons">
+          <ion-item ng-repeat="radio in genrelist"
+                    item="item"
+                    can-swipe="true" ng-click=" radioLink('{{radio.type}}','{{radio.cmd}}','{{radio.id}}') ">
+            {{radio.name}} 
+            <ion-option-button class="button-positive"
+                        ng-show="radio.option_addToPlaylist"
+                        ng-click=" radioLink('{{radio.type}}','add','{{radio.id}}')  ">
+            Add To Playlist
+            </ion-option-button>
+
+          </ion-item>
+        </ion-list>
+    <ion-list >
+      <!-- <ion-item class="item" ng-repeat="radio in genrelist" ng-click="radio.disable_click || radioLink('{{radio.type}}','{{radio.cmd}}','{{radio.id}}')">
+        {{radio.name}} 
+
+           <ion-option-button class="button-positive" ng-if="radio.option_addToPlaylist" ng-click="addToPlaylist('{{radio.id}}','{{radio.type}}')">Add to Playlist</ion-option-button>
+           <ion-option-button class="button-negative" ng-if="radio.option_playNow" ng-click="playNow('{{radio.id}}','{{radio.type}}')">Play</ion-option-button>
+
+    <!--        <ion-option-button class="button-positive" ng-if=" radio.type == 'playlist' || radio.type =='audio' " ng-click="playNow('{{radio.id}}')">Add to Playlist</ion-option-button> 
+      </ion-item> -->
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadMore('radio')" ng-if="hasMoreData" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+<!-- 
+  <ion-footer-bar align-title="left" class="larger_footer_bar bar-assertive" ng-if="!hidebars" ng-click="goTo('nowplaying','False')">
+    <h1 class="title">Nas</h1>
+    <h4 class="title">If I ruled the world</h4>
+   
+    <div class="buttons" ng-click="SortList()">
+      <button class="button">Play</button>
+    </div>    
+  </ion-footer-bar>   -->
+
+
+</ion-view>
+
+ <!-- "http://www.mysqueezebox.com/api/pandora/v1/opml/station_play?stationId=311954255175860930"
+ c1c01084.0.1.0
+ "http://www.mysqueezebox.com/api/pandora/v1/opml/station?stationId=75105345880310466"
+ c1c01084.0.1 -->

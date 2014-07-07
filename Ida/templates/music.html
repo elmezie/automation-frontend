@@ -1,0 +1,55 @@
+<ion-view title="Music">
+ <div>
+      <div ng-include src="'templates/header_partial.html'"></div>
+  </div>
+
+
+
+    <ion-content class="has-header  padding-bottom">
+      
+        <ion-list>
+            <!-- <ion-item class="item" href="#/app/music/genres"> -->
+            <!-- <ion-item nav-clear menu-close ng-click='goTo("music/genres")'> -->
+            <ion-item class="item scroll-item item-icon-right " ng-click='goTo("music/playlists")'>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+            Playlists
+             
+          </ion-item>      
+            <ion-item class="item scroll-item  item-icon-right " ng-click='goTo("music/genres")'>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+                Genres
+            </ion-item>
+
+          <ion-item class="item scroll-item  item-icon-right " ng-click='goTo("music/artists")'>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+            Artists
+          </ion-item>      
+          <ion-item class="item scroll-item  item-icon-right " ng-click='goTo("music/albums")'>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+            Albums
+          </ion-item>      
+          <ion-item class="item scroll-item  item-icon-right "  ng-click='goTo("music/songs")'>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+            Songs
+          </ion-item>      
+
+          <ion-item class="item scroll-item  item-icon-right " ng-click='goTo("music/browse")'>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+            Browse
+          </ion-item>      
+        </ion-list>
+    <!-- <ion-infinite-scroll on-infinite="loadMore()" distance="1%"></ion-infinite-scroll> -->
+  </ion-content>
+
+<!--   <ion-footer-bar align-title="left" class="larger_footer_bar bar-assertive" ng-if="!hidebars" ng-click="goTo('nowplaying','False')">
+    <h1 class="title">Nas</h1>
+    <h4 class="title">If I ruled the world</h4>
+   
+    <div class="buttons" ng-click="SortList()">
+      <button class="button">Play</button>
+    </div>    
+  </ion-footer-bar>   -->
+
+
+
+</ion-view>

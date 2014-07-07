@@ -1,0 +1,36 @@
+<ion-view title="{{televisionSeasons['@title2']}}">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+  	<button menu-toggle="right" class="button button-icon icon ion-navicon" ng-click="incrementDataInService('video')" ></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header"  ng-init="televisionSeasons()">
+<!--       <ion-list>
+        <ion-item ng-repeat="season in televisionSeasons['Directory']" ng-model="videos" href="#/app/television/episodes/{{season['@ratingKey']}}">
+          {{season["@title"]}}
+        </ion-item>
+      </ion-list> -->
+
+      <ion-list>
+        <ion-item ng-if="televisionMultipleSeasons" ng-repeat="season in televisionSeasons['Directory']" ng-model="videos" href="#/app/television/episodes/{{season['@ratingKey']}}">
+        {{season["@title"]}}
+        </ion-item>
+        <ion-item ng-if="!televisionMultipleSeasons" ng-model="videos" href="#/app/television/episodes/{{televisionSeasons['Directory']['@ratingKey']}}">
+          {{televisionSeasons['Directory']['@title']}}
+        </ion-item>        
+        
+      </ion-list>      
+
+  </ion-content>
+<!--   <ion-footer-bar align-title="left" class="bar-assertive">
+    <div class="buttons">
+      <button class="button">Filter</button>
+    </div>
+    <h1 class="title">Title!</h1>
+    <div class="buttons" ng-click="SortList()">
+      <button class="button">Sort</button>
+    </div>
+  </ion-footer-bar>  -->   
+</ion-view>
+

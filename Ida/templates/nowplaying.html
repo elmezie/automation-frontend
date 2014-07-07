@@ -1,0 +1,77 @@
+<ion-view title="Now Playing" hide-back-button="true">>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-close" ng-click="back()"></button>
+  </ion-nav-buttons>
+    <ion-content class="has-header" >
+<!--         <div style="margin-top:1em;">
+            <div class="range" style="width:250px;margin:0 auto;" >
+                <input data-displayInput="true" type="text" data-max="max" data-width="250" data-height="250" value="5"  knob class="dial" ng-model="currentTrackInfo.elapsed" >
+              
+            </div>
+        </div> -->
+  <!--       <div style="margin-top:1em;">
+            <div class="range" style="width:250px;margin:0 auto;" >
+                <knob knob-data="someObj.data" ng-model="someObj.data" update-fn="updateFn(someObj.data)" update-newfn="updateNewFn(someObj.data)"  knob-max='max' knob-options="knobOptions"></knob>
+                <!-- {{someObj.data}} -->
+<!--             </div>
+        </div>  -->
+
+<div class="list card no-border">
+
+  <div class="item item-avatar scroll-item">
+    <h2 style="color:#fff;">Pretty Hate Machine</h2>
+    <p> Inch Nails</p>
+  </div>
+  <div class="item item-image custom-image-item" >
+    <img src="http://mediacenter:9000/music/current/cover.jpg?player=b8:27:eb:1e:df:46"> 
+  </div>
+
+
+</div>
+
+        <div style="margin:0 auto;width:95%;text-align:center;display:table;">
+  <!--       <div style="display:table-cell;vertical-align:middle;">
+        <i class="icon ion-loop custom-icon" style="display:block;font-size:250%;"></i>
+        <i class="icon ion-shuffle custom-icon" style="display:block;font-size:250%;"></i>
+        </div> -->
+        <i class="icon ion-loop custom-icon" style="display:block;font-size:200%;display:table-cell;vertical-align:middle;"></i>
+        <i class="icon ion-ios7-skipbackward custom-icon" style="font-size:350%;display:table-cell;vertical-align:middle;"></i>
+        <i class="icon ion-play custom-icon icon-big" style="display:table-cell;vertical-align:middle;"></i>
+        <i class="icon ion-ios7-skipforward custom-icon" style="font-size:350%;display:table-cell;vertical-align:middle;"></i>
+        <i class="icon ion-shuffle custom-icon" style="display:block;font-size:200%;display:table-cell;vertical-align:middle;"></i>
+        <!-- <button class="button button-light">
+            Shuffle
+        </button>
+        <button class="button button-light">
+            Repeat
+        </button>
+        <button class="button button-light" ng-click="togglePlay()">
+            Play
+        </button>
+        <button class="button button-light" ng-click="playlistNext()">
+            Next
+        </button>
+        <button class="button button-light" ng-click="playlistPrevious()">
+            Prev
+        </button> -->
+        </div>
+        <div>value : {{someObj.data}}</div>
+        <div style="width:95%;margin:0 auto;text-align:center;">
+            <div class="range range-energized">
+                <span style="color:#FFF;">0:00</span>
+                <input type="range" name="volume" min="0" max="{{max}}" dragdetect ng-model="someObj.data" update-fn="updateFn(someObj.data)" update-newfn="updateNewFn(someObj.data)" >
+                <span style="color:#FFF;">5:00</span>
+
+            </div>
+            <div class="range range-energized">
+                <i class="icon ion-volume-low custom-icon"></i>
+                <input type="range" name="volume" min="0" max="100" dragdetect ng-model="currentTrackInfo.volume">
+                value : {{currentTrackInfo.volume}}
+                <i class="icon ion-volume-high custom-icon"></i>
+            </div>
+        </div>
+    </ion-content>
+
+
+
+</ion-view>

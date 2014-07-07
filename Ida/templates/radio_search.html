@@ -1,0 +1,25 @@
+<ion-view title="Radio">
+    <div>
+        <div ng-include src="'templates/header_partial.html'"></div>
+    </div>
+    <ion-content class="has-header">
+
+    <ion-list>
+      <ion-item class="item" ng-repeat="radio in genrelist" ng-click="radioLink('{{radio.type}}','search','{{radio.id}}')">
+        {{radio.name}}
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadMore('search_radio')" ng-if="hasMoreData" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+<!-- 
+  <ion-footer-bar align-title="left" class="larger_footer_bar bar-assertive" ng-if="!hidebars" ng-click="goTo('nowplaying','False')">
+    <h1 class="title">Nas</h1>
+    <h4 class="title">If I ruled the world</h4>
+   
+    <div class="buttons" ng-click="SortList()">
+      <button class="button">Play</button>
+    </div>    
+  </ion-footer-bar>   -->
+
+
+</ion-view>

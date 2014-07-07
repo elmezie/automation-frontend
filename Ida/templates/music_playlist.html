@@ -1,0 +1,23 @@
+<ion-view title="Albums">
+<div class="bar bar-subheader item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios7-search placeholder-icon"></i>
+    <input type="text" ng-model="search.album" placeholder="Search..."/>
+  </label>
+  <button class="button button-clear" ng-click="search='' ">
+    Cancel
+  </button>
+</div>  
+    <ion-content class="has-header has-subheader">
+      
+    <ion-list>
+      <ion-item class="item" ng-repeat="albums in genrelist | filter:search.album" href="#/app/music/songs/albums/{{albums.id}}">
+        {{albums.artist}} - {{albums.album}}
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="hasMoreData" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+
+
+
+</ion-view>

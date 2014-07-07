@@ -1,0 +1,85 @@
+<ion-view title="{{video_detail.title}}">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-navicon" ng-click="goTo('video_nowplaying')"></button>
+    </ion-nav-buttons>
+
+  <ion-content class="has-header" ng-init="metadata()">
+    <div class="list card">
+
+      <!-- <div class="item item-avatar"> -->
+<div class="row">
+
+  <div class="col col-75">
+      <div class="row">
+          <div class="col col-40">
+                <p>Rating</p>
+                <p>Year</p>
+                <p>Duration</p>
+                <p>Genre</p>
+                <p>Content-Rating</p>
+                <p>Studio</p>
+          </div>
+          <div class="col ">
+              <p>{{video_detail["@rating"]}}</p>
+              <p>{{video_detail["@year"]}}</p>
+              <p>{{video_detail["@duration"]}}</p>
+              <p><span ng-repeat="genre in video_detail.Genre"> 
+                 {{genre["@tag"]}} {{$last ? '' : ', '}} 
+              </span></p>
+              <p>{{video_detail["@contentRating"]}}</p>
+              <p>{{video_detail["@studio"]}}</p>
+          </div>
+          
+    </div>
+
+        
+  </div>
+
+</div>
+
+        
+      <!-- </div> -->
+
+      <div class="item item-body">
+        <!-- <img class="item-image" src="delorean.jpg"> -->
+        <p>
+          {{video_detail["@summary"]}}
+        </p>
+        <p>
+          <a href="#" class="subdued">1 Like</a>
+          <a href="#" class="subdued">5 Comments</a>
+        </p>
+      </div>
+
+<div>
+<button class="button button-light" ng-click="play(video_detail.key)">
+  play
+</button>
+<button class="button button-light">
+  watched
+</button>
+
+</div>
+<!--       <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" href="#">
+          <i class="icon ion-thumbsup"></i>
+          Like
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-chatbox"></i>
+          Comment
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-share"></i>
+          Share
+        </a>
+      </div> -->
+
+    </div>
+  </ion-content>
+</ion-view>
+
+

@@ -1,0 +1,77 @@
+
+<ion-view title="Thermostat">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+
+    <ion-tabs class="tabs-icon-top">
+        <!-- Dashboard Tab -->
+        <ion-tab title="Dashboard" icon="icon ion-home">
+            <ion-nav-view name="tab-dashboard">
+                <ion-view title="Account">
+				<ion-content class="has-header" ng-init="loadValues()">
+                <div style="margin-top:1em;">
+                    <div class="range" style="height:300px;width:250px;margin:0 auto;" >
+                        <knob knob-data="someObj.temp" ng-model="someObj.temp" update-fn="updateFn(someObj.temp)" update-newfn="updateNewFn(someObj.temp)"  knob-max='max' knob-options="knobOptions"></knob>
+                        {{someObj.temp}}
+                    </div>
+                </div> 
+
+                        <div style="text-align:center;">
+                            <div style="width:45%;float:left;">
+                            <h5>Current</h5>
+                            45
+                            </div>
+                            <div style="width:45%;float:left;">
+                            <h5>Outside</h5>
+                            45
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <!-- <h5>Current  : 55 </h5>
+                        <h5>Outside  : 33 </h5>
+
+                </ion-content>
+
+ 				<ion-footer-bar align-title="left" class="bar-subfooter">
+                    <div class="button-bar">
+                        <a class="button" ng-click="showOperatingMode()">Mode</a>
+                        <a class="button" ng-click="showFanMode()">Fan</a>
+                        <a class="button" ng-click="showHoldMode()">Hold</a>
+                    </div>
+                 </ion-footer-bar>  -->
+
+                </ion-view>
+            </ion-nav-view>
+        </ion-tab>
+
+        <!-- Forecast Tab -->
+        <ion-tab title="Forecast" icon="icon ion-heart" >
+            <ion-nav-view name="app-dash">
+                <ion-view title="Account">
+                    <ion-content class="has-header padding">
+                        <h1>Forecast</h1>
+                    </ion-content>
+                </ion-view>
+            </ion-nav-view>
+        </ion-tab>
+
+          <!-- Settings Tab -->
+        <ion-tab title="Settings" icon="icon ion-gear-b" >
+            <ion-nav-view name="tab-account">
+                <ion-view title="Account">
+                    <ion-content class="has-header padding">
+                        <h1>Settings</h1>
+                    </ion-content>
+                </ion-view>
+            </ion-nav-view>
+        </ion-tab>
+
+
+    </ion-tabs>
+
+
+</ion-view>
+
+
+
