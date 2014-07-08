@@ -59,15 +59,20 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,debounce
         //$scope.poller1.stop()
     }
 
-    $scope.updateFn = function(msg){
+    $scope.updateFn = function(msg,type){
         // Update the new time
         
         console.log("HERE")        
         console.log(msg)
-        $scope.stopped = false;
-        PlaylistsService.seek_to(msg).then(function(data){
-            $scope.poller1.start()
-        })
+        if(type == 'volume'){
+            PlaylistsService.changeVolume(msg)
+        }else{
+            $scope.stopped = false;
+
+            PlaylistsService.seek_to(msg).then(function(data){
+                $scope.poller1.start()
+            })
+        }
         console.log("released")        
         //$scope.fn(msg)
         //$scope.poller1.start()
@@ -104,7 +109,7 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,debounce
     }    
     $scope.initTest = function(){
         //var myResource = $resource('http://192.168.1.7:5000/music/track');
-        $scope.poller1 = poller.get(greet1, {action: 'jsonp_get', delay: 1200});
+        $scope.poller1 = poller.get(greet1, {action: 'jsonp_get', delay: 61200});
         $scope.poller1.promise.then(null, null, function (data) {
             $scope.currentTrackInfo = data.objects
             // //$scope.data1 = data;
