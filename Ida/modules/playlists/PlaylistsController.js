@@ -104,7 +104,7 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,debounce
     }    
     $scope.initTest = function(){
         //var myResource = $resource('http://192.168.1.7:5000/music/track');
-        $scope.poller1 = poller.get(greet1, {action: 'jsonp_get', delay: 60000});
+        $scope.poller1 = poller.get(greet1, {action: 'jsonp_get', delay: 1200});
         $scope.poller1.promise.then(null, null, function (data) {
             $scope.currentTrackInfo = data.objects
             // //$scope.data1 = data;
