@@ -1,8 +1,7 @@
 // app/modules/patient/controllers.js
 
-angular.module('Playlists').controller('PlaylistsCtrl', function($scope,debounce,poller,greet1,$resource,$timeout,$http,$stateParams,$location,$ionicModal,PlaylistsService,myService) {
+angular.module('Playlists').controller('PlaylistsCtrl', function($scope,$ionicNavBarDelegate,debounce,poller,greet1,$resource,$timeout,$http,$stateParams,$location,$ionicModal,PlaylistsService,myService) {
     
-
     var endpoint = $location.path().split("/")[2]||null; 
     var searchon = $location.path().split("/")[3]||null;
     
@@ -109,7 +108,7 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,debounce
     }    
     $scope.initTest = function(){
         //var myResource = $resource('http://192.168.1.7:5000/music/track');
-        $scope.poller1 = poller.get(greet1, {action: 'jsonp_get', delay: 61200});
+        $scope.poller1 = poller.get(greet1, {action: 'jsonp_get', delay: 1400});
         $scope.poller1.promise.then(null, null, function (data) {
             $scope.currentTrackInfo = data.objects
             // //$scope.data1 = data;
@@ -251,7 +250,7 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,debounce
         console.log('going going back back')
         $scope.poller1.stop()   
         
-        window.history.back();
+         $ionicNavBarDelegate.back();
     };    
 
     $scope.close = function() {
