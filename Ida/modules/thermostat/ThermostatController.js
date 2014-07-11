@@ -1,7 +1,7 @@
 // app/modules/patient/controllers.js
 //.controller('AppCtrl', ['$scope','$http','$location', function($scope,$http,$location) {
 
-angular.module('Thermostat',[]).controller('ThermostatCtrl', function($scope,$stateParams,$ionicActionSheet) {
+angular.module('Thermostat',[]).controller('ThermostatCtrl', function($scope,$window,$stateParams,$ionicActionSheet) {
     $scope.slider = {};
     $scope.slider.rangeValue = 0;
     $scope.text = 22;
@@ -10,15 +10,24 @@ angular.module('Thermostat',[]).controller('ThermostatCtrl', function($scope,$st
     $scope.dialval2 = 44
 
     $scope.loadValues = function(){
+        
         $scope.someObj = { temp: 55 };
-            $scope.knobOptions = {
-                'width':250,
-                'displayInput': true,
-                'fgColor':"#66CC66",
-            };         
-              $scope.number = 24;
+
+    $scope.max = 1000;
+
+    $scope.data = 30;
+
+    $scope.knobOptions = {
+      'width':250,
+      'displayInput': true
+    };     
+
     }
 
+    $scope.reloadPage = function(){
+        $window.location.reload()
+    }
+    
     $scope.updateNewFn = function(msg){
         
         console.log("Scope Stopped")

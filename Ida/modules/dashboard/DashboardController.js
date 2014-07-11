@@ -539,6 +539,9 @@ angular.module('Dashboard',[]).controller('DashboardCtrl', function($scope,$ioni
             case "television":
                 path_variable = 'television'
             break;
+            case "thermostat":
+                  
+            break;
         }
 
         console.log("location path : "+ "/app/"+path_variable)

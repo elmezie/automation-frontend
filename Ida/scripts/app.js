@@ -29,7 +29,7 @@ angular.module('Video',[]);
 angular.module('Thermostat',[]);
 angular.module('Remote',[]);
 
-var MainApp = angular.module('MainApp', ['emguo.poller','ngResource','rt.debounce', 'ionic','Dashboard','Playlists','Video','Thermostat','Remote']);
+var MainApp = angular.module('MainApp', ['ui.knob','emguo.poller','ngResource','rt.debounce', 'ionic','Dashboard','Playlists','Video','Thermostat','Remote']);
 MainApp.run(function($ionicPlatform) {
     
   // $ionicPlatform.ready(function() {

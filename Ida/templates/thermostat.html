@@ -16,9 +16,16 @@
         <input type="range" name="volume" ng-model="data.volume">
         <i class="icon ion-volume-high"></i>
       </div> -->
-                    <div style="margin-top:2em;">
+      <knob knob-data="data" knob-max='max' knob-options="knobOptions"></knob>
+      {{data}}
+      <a ng-click="reloadPage()">Reload Page</a>
+        <!--             <div style="margin-top:2em;">
+                        <input type="text" value="65" knob class="dial" data-displayInput="true" data-fgColor="#ffec03" data-width="200" data-height="200">
                         <input type="text" value="65" knob class="dial" data-displayInput="true" data-fgColor="#ffec03" data-width="200" data-height="200">
                     </div>
+                    <div style="margin-top:2em;">
+                        
+                    </div> -->
 <!-- <input type="text" value="" knob class="dial"> -->
                 </div> 
 
