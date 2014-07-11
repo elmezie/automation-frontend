@@ -5,7 +5,8 @@
     <ion-content class="has-header">
 
     <ion-list>
-      <ion-item class="item" ng-repeat="artist in genrelist" href="#/app/music/albums/artist/{{artist.id}}">
+      <ion-item class="item scroll-item item-icon-right " ng-repeat="artist in genrelist" href="#/app/music/albums/artist/{{artist.id}}">
+        <i class="icon ion-chevron-right icon-accessory"></i>
         {{artist.artist}}
       </ion-item>
     </ion-list>

@@ -29,7 +29,7 @@ angular.module('Video',[]);
 angular.module('Thermostat',[]);
 angular.module('Remote',[]);
 
-var MainApp = angular.module('MainApp', ['ui.knob', 'emguo.poller','ngResource','rt.debounce', 'ionic','Dashboard','Playlists','Video','Thermostat','Remote']);
+var MainApp = angular.module('MainApp', ['emguo.poller','ngResource','rt.debounce', 'ionic','Dashboard','Playlists','Video','Thermostat','Remote']);
 MainApp.run(function($ionicPlatform) {
     
   // $ionicPlatform.ready(function() {
@@ -91,7 +91,14 @@ MainApp
         }
     }
 })
-
+.directive('knob', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            $(element).val(scope.number).knob();
+        }
+    };
+})
 // .factory('Poller', function($http, $timeout,PlaylistsService) {
 //   var service = {}
 //   var data = {}
@@ -183,10 +190,10 @@ MainApp
         // Access e.gesture for gesture related information
         //console.log('Drag: ', e.gesture.touches[0].pageX, e.gesture.touches[0].pageY, e.gesture.deltaX, e.gesture.deltaY);
        // PlaylistsService.changeVolume($element[0].value)
-        console.dir($element[0].value)
-        console.log("vals")
-        //console.dir($attr)
-        $scope.updateFn($element[0].value)
+        // console.dir($element[0].value)
+        // console.log("vals")
+        // console.dir($attr.name)
+        $scope.updateFn($element[0].value,$attr.name)
       };
 
       var handleDrags = function(e) {

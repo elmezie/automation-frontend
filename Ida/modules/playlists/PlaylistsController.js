@@ -61,8 +61,9 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,$ionicNa
     $scope.updateFn = function(msg,type){
         // Update the new time
         
-        console.log("HERE")        
-        console.log(msg)
+        console.log("HERE")    
+        console.log(msg)    
+        console.log(type)
         if(type == 'volume'){
             PlaylistsService.changeVolume(msg)
         }else{
@@ -90,7 +91,20 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,$ionicNa
     }) 
 
     $scope.change_player_mode = function(mode){
-        console.log("player mode :" + mode)
+        switch(mode){
+            case "ion-stop":
+                $scope.playerMode = 'ion-pause'
+            break;
+            case "ion-play":
+                $scope.playerMode = 'ion-pause'
+            break;
+            case "ion-pause":
+                $scope.playerMode = 'ion-play'
+            break;
+
+
+        }        
+        console.log("Player Mode: " + $scope.playerMode)
         PlaylistsService.changePlayerMode(mode).then(function(data){
             console.log('mode changed')
             console.log(data)
@@ -105,10 +119,17 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,$ionicNa
     }    
     $scope.playlistPrevious = function(){
         PlaylistsService.playlistPrevious();
-    }    
+    }  
+
+    $scope.convertTime = function(seconds){
+        var minutes = Math.floor(seconds / 60); // 7
+        var seconds = seconds % 60; // 30
+        
+        return minutes+":"+ (seconds  < 10 ? "0" + seconds.toFixed(0) : seconds.toFixed(0));
+    }  
     $scope.initTest = function(){
         //var myResource = $resource('http://192.168.1.7:5000/music/track');
-        $scope.poller1 = poller.get(greet1, {action: 'jsonp_get', delay: 1400});
+        $scope.poller1 = poller.get(greet1, {action: 'jsonp_get', delay: 1300});
         $scope.poller1.promise.then(null, null, function (data) {
             $scope.currentTrackInfo = data.objects
             // //$scope.data1 = data;
@@ -129,7 +150,7 @@ angular.module('Playlists').controller('PlaylistsCtrl', function($scope,$ionicNa
             }
 
             $scope.someObj = { data: data.objects.elapsed };
-            // $scope.max = data.objects.duration
+            $scope.max = data.objects.duration
             // $scope.knobOptions = {
             //     'width':200,
             //     'displayInput': true,

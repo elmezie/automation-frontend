@@ -5,9 +5,8 @@
     <ion-content class="has-header">
 
     <ion-list option-buttons="itemButtons">
-          <ion-item ng-repeat="radio in genrelist"
-                    item="item"
-                    can-swipe="true" ng-click=" radioLink('{{radio.type}}','{{radio.cmd}}','{{radio.id}}') ">
+          <ion-item class="item scroll-item item-icon-right " ng-repeat="radio in genrelist" can-swipe="true" ng-click=" radioLink('{{radio.type}}','{{radio.cmd}}','{{radio.id}}') ">
+          <i class="icon ion-chevron-right icon-accessory"></i>
             {{radio.name}} 
             <ion-option-button class="button-positive"
                         ng-show="radio.option_addToPlaylist"

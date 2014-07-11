@@ -1686,6 +1686,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   vertical-align: baseline;
   font: inherit;
+  color:#fff;
   font-size: 100%; }
 
 ol, ul {
@@ -3375,7 +3376,9 @@ a.subdued {
 
 .item.active, .item.activated, .item-complex.active .item-content, .item-complex.activated .item-content {
   border-color: #353535;
-  background-color: #404040; }
+  background-color: #f0b840; 
+  color:#000;
+}
   .item.active.item-light, .item.activated.item-light, .item-complex.active .item-content.item-light, .item-complex.activated .item-content.item-light {
     border-color: #ccc;
     background-color: #fafafa; }

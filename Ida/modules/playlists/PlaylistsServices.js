@@ -91,7 +91,7 @@ angular.module('Playlists').factory('PlaylistsService', function($http,$rootScop
             method: "post",
             headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
             transformRequest: transform,
-            url: API_URL+':'+API_PORT+'/music/playlist',
+            url: API_URL+':'+API_PORT+'/music/player',
             data:{
                 action: 'changeVolume',
                 identifier: vol

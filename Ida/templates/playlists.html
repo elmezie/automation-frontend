@@ -4,7 +4,7 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="playlist in genrelist" href="#/app/music/playlists/{{playlist.id}}">
+      <ion-item class="item scroll-item" ng-repeat="playlist in genrelist" href="#/app/music/playlists/{{playlist.id}}">
         {{playlist.playlist}}
       </ion-item>
     </ion-list>

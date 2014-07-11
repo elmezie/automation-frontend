@@ -58,9 +58,9 @@
         <div>value : {{someObj.data}}</div>
         <div style="width:95%;margin:0 auto;text-align:center;">
             <div class="range range-energized">
-                <span style="color:#FFF;">{{currentTrackInfo.elapsed_formatted}}</span>
-                <input type="range" name="volume" min="0" max="{{max}}" ng-model="someObj.data" update-fn="updateFn(someObj.data)" update-newfn="updateNewFn(someObj.data)" >
-                <span style="color:#FFF;">{{currentTrackInfo.duration}}</span>
+                <span style="color:#FFF;">{{ convertTime(someObj.data) }}</span>
+                <input type="range" name="trackseek" min="0" max="{{max}}" ng-model="someObj.data" dragdetect update-fn="updateFn(someObj.data,'trackseek')" update-newfn="updateNewFn(someObj.data,'trackseek')" >
+                <span style="color:#FFF;">{{currentTrackInfo.duration_formatted}}</span>
 
             </div>
             <div class="range range-energized">

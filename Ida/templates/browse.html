@@ -5,7 +5,7 @@
     <ion-content class="has-header">
 
     <ion-list>
-      <ion-item class="item" ng-repeat="folder in genrelist" ng-click="browse('browse',{{folder.id}},'{{folder.type}}','{{folder.url}}')">
+      <ion-item class="item scroll-item" ng-repeat="folder in genrelist" ng-click="browse('browse',{{folder.id}},'{{folder.type}}','{{folder.url}}')">
         {{folder.filename}}
         <ion-option-button class="button-positive" ng-click="addToPlaylist('{{folder.url}}')">Add to Playlist</ion-option-button>
       </ion-item>

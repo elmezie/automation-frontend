@@ -16,6 +16,7 @@ angular.module('Thermostat',[]).controller('ThermostatCtrl', function($scope,$st
                 'displayInput': true,
                 'fgColor':"#66CC66",
             };         
+              $scope.number = 24;
     }
 
     $scope.updateNewFn = function(msg){
