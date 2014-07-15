@@ -1,5 +1,5 @@
 <ion-side-menus>
-
+<!--http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/-->
     <ion-pane ion-side-menu-content drag-content="false">
         <ion-nav-bar class="bar-stable nav-title-slide-ios7">
             <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
@@ -10,49 +10,71 @@
 
   <ion-side-menu side="left">
     <header class="bar bar-header bar-stable">
-      <h1 class="title">Left</h1>
+        <h1 class="title" style="font-weight:bold;">IDAutomation</h1>
+        
     </header>
-    <ion-content class="has-header">
+    <ion-content class="has-header item-sidemenu">
+        <div style="height:180px;background-color:#000;margin-top:1em;">
+            <div class="circle-icon">
+                <i class="icon ion-android-microphone menu-microphone" style="font-size:500%;" ></i>
+            </div>
+            <div class="row row-center" style="text-align:center;">
+                <div class="col">
+                    23
+                </div>
+            	<div class="col">
+                    24
+                </div>
+                <div class="col">
+                    25                    
+                </div>
+                
+            </div>
+        </div>
+
+
       <ion-list>
-        <ion-item nav-clear menu-close href="#/app/home">
+        <ion-item nav-clear menu-close href="#/app/home" class="item-sidemenu">
           Home
         </ion-item>
-        <ion-item nav-clear menu-close ng-click='goTo("control/logitech")'>
+        <ion-item nav-clear menu-close ng-click='goTo("control/logitech")' class="item-sidemenu">
           Logitech Remote
         </ion-item>
-        <div class="item item-divider">
+          <div class="item item-divider" style="background-color:#f0b840;color:#000;">
             Music
         </div>
-        <ion-item nav-clear menu-close ng-click='goTo("music/search")'>
+        <ion-item nav-clear menu-close ng-click='goTo("music/search")' class="item-sidemenu">
           Search
         </ion-item>
-        <ion-item nav-clear menu-close ng-click='goTo("music")'>
+        <ion-item nav-clear menu-close ng-click='goTo("music")' class="item-sidemenu">
           Local Server
         </ion-item>
-        <ion-item nav-clear menu-close ng-click='goTo("music/radio")'>
+        <ion-item nav-clear menu-close ng-click='goTo("music/radio")' class="item-sidemenu">
           Radio
         </ion-item>
-        <ion-item nav-clear menu-close ng-click='goTo("music/apps")'>
+        <ion-item nav-clear menu-close ng-click='goTo("music/apps")' class="item-sidemenu">
           Apps
         </ion-item>
-        <div class="item item-divider">
+        <div class="item item-divider" class="item-sidemenu" style="background-color:#f0b840;color:#000;">
             Video
         </div>
-        <ion-item nav-clear menu-close ng-click='goTo("movies")'>
+        <ion-item nav-clear menu-close ng-click='goTo("movies")' class="item-sidemenu">
           Movies
         </ion-item>
-        <ion-item nav-clear menu-close ng-click='goTo("television")'>
+        <ion-item nav-clear menu-close ng-click='goTo("television")' class="item-sidemenu">
           Television
         </ion-item> 
-        <div class="item item-divider"></div>               
+        <div class="item item-divider" style="background-color:#f0b840;color:#000;">
+            Environment
+        </div>               
 
-        <ion-item nav-clear menu-close href="#/app/thermostat">
+        <ion-item nav-clear menu-close href="#/app/thermostat" class="item-sidemenu">
           Thermostat
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/lights">
+        <ion-item nav-clear menu-close href="#/app/lights" class="item-sidemenu">
           Lights
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/settings">
+        <ion-item nav-clear menu-close href="#/app/settings" class="item-sidemenu">
           Settings
         </ion-item>        
       </ion-list>

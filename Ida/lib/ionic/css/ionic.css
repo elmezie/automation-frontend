@@ -3373,6 +3373,66 @@ a.subdued {
     border-color: #111;
     background-color: #444;
     color: #fff; }
+  .item.item-sidemenu{
+        background-image: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            color-stop(0.5, #1B1C1C),
+            color-stop(1, #121212)
+        );
+        background-image: -o-linear-gradient(bottom, #1B1C1C 50%, #121212 100%);
+        background-image: -moz-linear-gradient(bottom, #1B1C1C 50%, #121212 100%);
+        background-image: -webkit-linear-gradient(bottom, #1B1C1C 50%, #121212 100%);
+        background-image: -ms-linear-gradient(bottom, #1B1C1C 50%, #121212 100%);
+        background-image: linear-gradient(to bottom, #1B1C1C 50%, #121212 100%);
+}
+
+.circle {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px; 
+    background-color:#f0b840;
+    margin: 0 auto;
+	/* width and height can be anything, as long as they're equal */
+}
+
+.menu-microphone{
+    position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+}
+.parent {
+background: lightblue;
+padding: 1%;
+position: absolute;
+height: 50%;
+width: 30%;
+top: 50%;
+-webkit-transform: translateY(-50%);
+-moz-transform: translateY(-50%);
+-ms-transform: translateY(-50%);
+-o-transform: translateY(-50%);
+transform: translateY(-50%);
+}
+.circle-icon {
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	background-color: #F0B840;
+	border-radius: 100%;
+	text-align: center;
+	vertical-align: middle;
+    margin:0 auto;
+	/*margin: 0 auto 50px auto;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;*/
+}
+
+<div class="circle-icon"><i class="fa fa-camera fa-2x"></i></div>
+
   .item[ng-click]:hover {
     cursor: pointer; }
 
