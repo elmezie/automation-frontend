@@ -13,13 +13,20 @@ angular.module('Thermostat',[]).controller('ThermostatCtrl', function($scope,$wi
         
         $scope.someObj = { temp: 55 };
 
-    $scope.max = 1000;
+    $scope.max = 100;
 
-    $scope.data = 30;
+    $scope.data = 60;
 
     $scope.knobOptions = {
-      'width':250,
-      'displayInput': true
+      'width':140,
+      'displayInput': true,
+      'height':140,
+      'skin':'tron',
+      'fgColor':'#f0b840',
+      'thickness':'.3',
+      'bgColor':'none',
+      'readOnly':true,
+
     };     
 
     }
@@ -27,7 +34,7 @@ angular.module('Thermostat',[]).controller('ThermostatCtrl', function($scope,$wi
     $scope.reloadPage = function(){
         $window.location.reload()
     }
-    
+
     $scope.updateNewFn = function(msg){
         
         console.log("Scope Stopped")

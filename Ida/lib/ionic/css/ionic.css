@@ -2962,7 +2962,7 @@ a.subdued {
 
 .tabs-dark > .tabs, .tabs.tabs-dark {
   border-color: #111;
-  background-color: #444;
+  background-color: #222424;
   background-image: linear-gradient(0deg, #111, #111 50%, transparent 50%);
   color: #fff; }
   .tabs-dark > .tabs .tab-item .badge, .tabs.tabs-dark .tab-item .badge {
@@ -3047,7 +3047,8 @@ a.subdued {
 /* Navigational tab */
 /* Active state for tab */
 .tab-item.tab-item-active {
-  opacity: 1; }
+  opacity: 1;
+}
   .tab-item.tab-item-active.tab-item-light {
     color: #fff; }
   .tab-item.tab-item-active.tab-item-stable {
@@ -3065,7 +3066,8 @@ a.subdued {
   .tab-item.tab-item-active.tab-item-royal {
     color: #8a6de9; }
   .tab-item.tab-item-active.tab-item-dark {
-    color: #444; }
+    color: #000; }
+
 
 .item.tabs {
   display: -webkit-box;
@@ -6081,6 +6083,15 @@ a.button {
   flex: 0 0 50%;
   max-width: 50%; }
 
+.col-60, .col-61 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 60%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 60%;
+  -ms-flex: 0 0 60%;
+  flex: 0 0 60%;
+  max-width: 60%; }
+
 .col-66, .col-67 {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 66.6666%;
@@ -6396,11 +6407,30 @@ a.button {
 
 
 
-
-.custom-icon {
-  color : #FFFFFF;
+.area{
+    height: 100px;
+    width: 200px;
+    background: red;
+    margin:10px;
+    text-align: center;
+    display:table-cell;
+    vertical-align:middle;
 }
 
+
+.content {
+    height: 100px;
+    width: 200px;
+    display:table-cell;
+    vertical-align:middle;    
+}
+.custom-icon {
+  color : #000;
+}
+
+.thermostat_tab_on{
+
+}
 .icon-big{
   font-size:500%;
 
@@ -6445,4 +6475,8 @@ a.button {
 
 .headertext {
   background-color:#535353;
+}
+
+.tab-item-active .even-more-custom-icon {
+  color : #f0b840;
 }

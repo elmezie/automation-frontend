@@ -4,21 +4,31 @@
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
 
-    <ion-tabs class="tabs-icon-top">
+    <ion-tabs class="tabs-icon-top tabs-dark ">
         <!-- Dashboard Tab -->
-        <ion-tab title="Dashboard" icon="icon ion-home">
+        <ion-tab title="Dashboard" icon="icon ion-home even-more-custom-icon">
             <ion-nav-view name="tab-dashboard">
                 <ion-view title="Account">
 				<ion-content class="has-header" ng-init="loadValues()">
-                <div style="width:90%;text-align:center;margin:0 auto;height:350px;">
+<div style="width:99%;text-align:center;margin:0 auto;">
+    <div style="margin-top:.5em;">
+        <div class="row">
+            <div class="col">
+                <h3 style="color:#fff;font-weight:bold;margin:0;padding:0;">Cool</h3>
+                <knob knob-data="someObj.temp" ng-model="someObj.temp" knob-max='max' knob-options="knobOptions"></knob>
+            </div>
+            <div class="col">
+                <h3 style="color:#fff;font-weight:bold;margin:0;padding:0;">Humidity</h3>
+            <knob knob-data="someObj.temp" ng-model="someObj.temp" knob-max='max' knob-options="knobOptions"></knob>
+            </div>
+        </div>
 <!--     <div class="range">
         <i class="icon ion-volume-low"></i>
         <input type="range" name="volume" ng-model="data.volume">
         <i class="icon ion-volume-high"></i>
       </div> -->
-      <knob knob-data="data" knob-max='max' knob-options="knobOptions"></knob>
-      {{data}}
-      <a ng-click="reloadPage()">Reload Page</a>
+      
+        
         <!--             <div style="margin-top:2em;">
                         <input type="text" value="65" knob class="dial" data-displayInput="true" data-fgColor="#ffec03" data-width="200" data-height="200">
                         <input type="text" value="65" knob class="dial" data-displayInput="true" data-fgColor="#ffec03" data-width="200" data-height="200">
@@ -27,11 +37,90 @@
                         
                     </div> -->
 <!-- <input type="text" value="" knob class="dial"> -->
-                </div> 
+        <div class="row">
+            <div class="col col-60" style="border-top:1px solid #2e2e2e;" >
+                <div >
+                    <h5 style="color:#fff;margin-bottom:0px;">Set Point</h5>
+                </div>
+                <div class="row row-center">
+                    <div class="col col-35">
+                    <i class="icon ion-arrow-down-b" style="font-size:320%;"></i>
+                        <!-- <button class="button button-clear icon ion-arrow-down-b"></button> -->
+                        <!-- <div >
+                            <i class="icon ion-minus" style="font-size:200%;"></i>
+                        </div> -->
+                    </div>
 
-                        <div style="text-align:center;">
+                    <div class="col">
+                        <h2  style="color:#f0b840;font-size:200%;">75</h2>   
+
+                    </div>
+                    <div class="col col-35" >
+                        <i class="icon ion-arrow-up-b" style="font-size:320%;"></i>
+                        
+                        <!-- <button class="button icon ion-arrow-up-b"></button> -->
+                        <!-- <div>
+                            <i class="icon ion-plus" style="font-size:200%;"></i>
+                        </div> -->
+                    </div>
+
+                </div>
+            </div>
+            <div class="col" style="border-left:1px solid #2E2E2E;border-top:1px solid #2e2e2e;text-align:center;">
+              <h5 style="color:#fff;margin-bottom:0px;">Forecast</h5>
+              <div class="row row-center">
+                    <div class="col">
+                        <span class="fs1 climacon cloud" style='font-size:500%;' aria-hidden="true"></span>
+                    </div>
+                    <div class="col">
+                        <h3 style="color:#fff;font-weight:bold;margin:0;padding:0;">55</h3> 
+                    </div>
+                </div>
+                
+                
+                
+
+            </div>
+        </div>
+        <div class="row row-center" style="border-top:1px solid #2e2e2e;">
+            <div class="col col-25" >
+                <h5 style="color:#fff;">Hold</h5>
+                <label class="toggle toggle-energized">
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </div>
+            <div class="col col-25" >
+                <h5 style="color:#fff;">Fan</h5>
+                <label class="toggle toggle-energized">
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </div>
+            
+            <div class="col col-50" >
+                <h5 style="color:#fff;">Mode</h5>
+                <i class="icon ion-flame" style="font-size:210%;padding-bottom:1em;"></i>
+                <label class="toggle toggle-energized" style="margin-left:3px;margin-right:3px;">
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+                <i class="icon ion-ios7-snowy" style="font-size:210%;"></i>
+                
+            </div>
+        </div>
+    </div>
+</div> 
+
+          <!--               <div style="text-align:center;color:#fff;">
                             <div style="width:45%;float:left;">
-                            <h5>Current</h5>
+                            <h5 style="color:#fff;">Current</h5>
                             45
                             </div>
                             <div style="width:45%;float:left;">
@@ -39,7 +128,7 @@
                             45
                             </div>
                             <div style="clear:both;"></div>
-                        </div>
+                        </div> -->
                         <!-- <h5>Current  : 55 </h5>
                         <h5>Outside  : 33 </h5>
 
@@ -58,7 +147,7 @@
         </ion-tab>
 
         <!-- Forecast Tab -->
-        <ion-tab title="Forecast" icon="icon ion-heart" >
+        <ion-tab title="Forecast" icon="icon ion-heart even-more-custom-icon "  >
             <ion-nav-view name="app-dash">
                 <ion-view title="Account">
                     <ion-content class="has-header padding">
@@ -69,7 +158,7 @@
         </ion-tab>
 
           <!-- Settings Tab -->
-        <ion-tab title="Settings" icon="icon ion-gear-b" >
+        <ion-tab title="Settings" icon="icon ion-gear-b even-more-custom-icon" >
             <ion-nav-view name="tab-account">
                 <ion-view title="Account">
                     <ion-content class="has-header padding">

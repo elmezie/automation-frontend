@@ -1,6 +1,6 @@
 // app/modules/patient/controllers.js
 //.controller('AppCtrl', ['$scope','$http','$location', function($scope,$http,$location) {
-angular.module('Dashboard',[]).controller('DashboardCtrl', function($scope,$ionicGesture,$ionicPopup,$ionicModal,$ionicSideMenuDelegate,$http,$location,PlaylistsService,myService,VideoService,LoaderService) {
+angular.module('Dashboard',[]).controller('DashboardCtrl', function($scope,$window,$ionicGesture,$ionicPopup,$ionicModal,$ionicSideMenuDelegate,$http,$location,PlaylistsService,myService,VideoService,LoaderService) {
     var current_page = $location.url()
     ionic.Platform.fullScreen() 
    
@@ -540,13 +540,15 @@ angular.module('Dashboard',[]).controller('DashboardCtrl', function($scope,$ioni
                 path_variable = 'television'
             break;
             case "thermostat":
-                  
+
             break;
         }
 
         console.log("location path : "+ "/app/"+path_variable)
 
-        $location.path("/app/"+path_variable); // path not hash
+        //$location.path("/app/"+path_variable); // path not hash
+        //$route.reload();
+        $window.location.href ="http://192.168.1.7/#/app/"+path_variable
     }   
 
   $scope.playlists = [
