@@ -127,6 +127,7 @@
                     release: null, // function (value) {}
 
                     // Output formatting, allows to add unit: %, ms ...
+                	
                     format: function(v) {
                         return v;
                     },
@@ -701,7 +702,7 @@
                 String(Math.abs(this.o.min)).length,
                 2
             ) + 4;
-            console.log((this.w / s) * 4)
+            
             this.o.displayInput
                 && this.i.css({
                         'width' : ((this.w / 2 + 4) >> 0) + 'px',
@@ -712,7 +713,8 @@
                         'margin-left' : '-' + ((this.w * 3 / 4 + 2) >> 0) + 'px',
                         'border' : 0,
                         'background' : 'none',
-                        'font' : this.o.fontWeight + ' ' + ((this.w / s)* 1.7 >> 0) + 'px ' + this.o.font,
+                    
+                        'font' : this.o.fontWeight + ' ' + ((this.w / s)* 1.5 >> 0) + 'px ' + this.o.font,
                         'text-align' : 'center',
                         'color' : this.o.inputColor || this.o.fgColor,
                         'padding' : '0px',
@@ -770,10 +772,7 @@
             }
 
             // "tron" case
-            console.log(this.o.skin)
             if(this.o.skin == 'tron') {
-                console.log('tron skin')
-
                 var a = this.angle(this.cv)  // Angle
                     , sa = this.startAngle          // Previous start angle
                     , sat = this.startAngle         // Start angle

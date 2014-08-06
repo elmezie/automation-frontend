@@ -1,7 +1,7 @@
 // app/modules/patient/controllers.js
 //.controller('AppCtrl', ['$scope','$http','$location', function($scope,$http,$location) {
 
-angular.module('Thermostat',[]).controller('ThermostatCtrl', function($scope,$window,$stateParams,$ionicActionSheet) {
+angular.module('Thermostat',[]).controller('ThermostatCtrl', function($scope,$window,$stateParams,$ionicActionSheet,ThermostatService) {
     $scope.slider = {};
     $scope.slider.rangeValue = 0;
     $scope.text = 22;
@@ -10,27 +10,31 @@ angular.module('Thermostat',[]).controller('ThermostatCtrl', function($scope,$wi
     $scope.dialval2 = 44
 
     $scope.loadValues = function(){
+		ThermostatService.getThermostat().then(function(data){
+            console.dir(data.data.objects[0])
+        	$scope.someObj = data.data.objects[0] 
+            console.log($scope.someObj.temp)
+        });
         
-        $scope.someObj = { temp: 55 };
-
-    $scope.max = 100;
-
-    $scope.data = 60;
-
-    $scope.knobOptions = {
-      'width':140,
-      'displayInput': true,
-      'height':140,
-      'skin':'tron',
-      'fgColor':'#f0b840',
-      'thickness':'.3',
-      'bgColor':'none',
-      'readOnly':true,
-
-    };     
+    	$scope.max = 100;
+	    $scope.knobOptions = {
+          'width':150,
+          'displayInput': true,
+          'height':150,
+          'skin':'tron',
+          'fgColor':'#f0b840',
+          'thickness':'.2',
+          'bgColor':'none',
+          'readOnly':true,
+          'step':'.5'
+    	};     
 
     }
 
+    //socket.on('my response', function (data) {
+    //	console.log(data)
+	//});
+    
     $scope.reloadPage = function(){
         $window.location.reload()
     }

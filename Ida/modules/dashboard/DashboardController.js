@@ -11,6 +11,7 @@ angular.module('Dashboard',[]).controller('DashboardCtrl', function($scope,$wind
     $scope.hideSidemenuBackButton = true;
     var videoFilters = new Array();
     var videoFilter = {};
+    $scope.idaRecording = false;
 
     $scope.x = "Playlist";
     //$scope.data = Poller.data;
@@ -546,9 +547,9 @@ angular.module('Dashboard',[]).controller('DashboardCtrl', function($scope,$wind
 
         console.log("location path : "+ "/app/"+path_variable)
 
-        //$location.path("/app/"+path_variable); // path not hash
+        $location.path("/app/"+path_variable); // path not hash
         //$route.reload();
-        $window.location.href ="http://192.168.1.7/#/app/"+path_variable
+        //$window.location.href ="http://192.168.1.7/#/app/"+path_variable
     }   
 
   $scope.playlists = [

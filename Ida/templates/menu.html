@@ -14,19 +14,20 @@
         
     </header>
     <ion-content class="has-header item-sidemenu">
+
         <div style="height:180px;background-color:#000;margin-top:1em;">
-            <div class="circle-icon">
-                <i class="icon ion-android-microphone menu-microphone" style="font-size:500%;" ></i>
+            <div ng-class="{'circle-icon': !idaRecording, 'circle-icon-active': idaRecording}" ng-click="idaRecording=!idaRecording">
+                <i class="icon ion-android-microphone menu-microphone-icon" ></i>
             </div>
             <div class="row row-center" style="text-align:center;">
-                <div class="col">
-                    23
+                <div class="col" style="border-right:1px solid #2e2e2e;">
+                    <h6 style="color:#fff;font-size:30px;margin-bottom:0px;">23</h6>
+                    <h7>Notifications</h7>
+                    
                 </div>
-            	<div class="col">
-                    24
-                </div>
                 <div class="col">
-                    25                    
+                    <h6 style="color:#fff;font-size:30px;margin-bottom:0px;">15</h6>
+                    <h7>Timeline</h7>
                 </div>
                 
             </div>

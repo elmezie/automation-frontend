@@ -3396,12 +3396,12 @@ a.subdued {
     margin: 0 auto;
 	/* width and height can be anything, as long as they're equal */
 }
-
+/*
 .menu-microphone{
     position: relative;
   	top: 50%;
   	transform: translateY(-50%);
-}
+}*/
 .parent {
 background: lightblue;
 padding: 1%;
@@ -3415,24 +3415,51 @@ top: 50%;
 -o-transform: translateY(-50%);
 transform: translateY(-50%);
 }
+
 .circle-icon {
-	width: 100px;
-	height: 100px;
-	line-height: 100px;
-	background-color: #F0B840;
-	border-radius: 100%;
-	text-align: center;
-	vertical-align: middle;
+  	width:80px;
+    height:80px;
+    background-color:#f0b840;
+    border-radius:100%;
+    border:4px solid #252525;
+    line-height:80px;
+    text-align:center;
+    vertical-align:middle;
     margin:0 auto;
-	/*margin: 0 auto 50px auto;
-	-webkit-transition: all .5s ease;
-	-moz-transition: all .5s ease;
-	-o-transition: all .5s ease;
-	transition: all .5s ease;*/
+    font-size:45px;
+    
 }
 
-<div class="circle-icon"><i class="fa fa-camera fa-2x"></i></div>
+.circle-icon-active {
+  	width:80px;
+    height:80px;
+    background-color:#DE0000;
+    border-radius:100%;
+    border:4px solid #AD0000;
+    line-height:80px;
+    text-align:center;
+    vertical-align:middle;
+    margin:0 auto;
+    font-size:45px;
+    
+}
 
+.ion-android-microphone{
+	line-height: inherit;
+}
+
+.menu-microphone-icon{
+    color:#ffffff;
+}
+.menu-microphone-icon-active{
+    color:#ffffff;
+}
+/*
+.element {
+  display: table-cell;
+     vertical-align: middle; 
+     text-align: center; 
+}*/
   .item[ng-click]:hover {
     cursor: pointer; }
 
@@ -4239,7 +4266,7 @@ input, button, select, textarea {
   padding: 7px 10px 7px 3px;
   max-width: 200px;
   width: 35%;
-  color: #444;
+  color: #737373;
   font-weight: bold;
   font-size: 14px; }
 
@@ -6535,8 +6562,14 @@ a.button {
 
 .headertext {
   background-color:#535353;
+  color:#000;
 }
 
 .tab-item-active .even-more-custom-icon {
   color : #f0b840;
+}
+
+.lights-item-divider{
+    background-color:#f0b840;
+    color:#000;
 }

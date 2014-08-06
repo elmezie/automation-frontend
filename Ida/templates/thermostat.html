@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="col">
-                        <h2  style="color:#f0b840;font-size:200%;">75</h2>   
+                        <h2  style="color:#f0b840;font-size:200%;">{{someObj.t_cool}}</h2>   
 
                     </div>
                     <div class="col col-35" >
@@ -67,7 +67,7 @@
                 </div>
             </div>
             <div class="col" style="border-left:1px solid #2E2E2E;border-top:1px solid #2e2e2e;text-align:center;">
-              <h5 style="color:#fff;margin-bottom:0px;">Forecast</h5>
+              <h5 style="color:#fff;margin-bottom:0px;">Outside</h5>
               <div class="row row-center">
                     <div class="col">
                         <span class="fs1 climacon cloud" style='font-size:500%;' aria-hidden="true"></span>
@@ -86,7 +86,7 @@
             <div class="col col-25" >
                 <h5 style="color:#fff;">Hold</h5>
                 <label class="toggle toggle-energized">
-                    <input type="checkbox">
+                    <input type="checkbox" ng-model="someObj.hold"  ng-true-value="1">
                     <div class="track">
                         <div class="handle"></div>
                     </div>
@@ -95,7 +95,7 @@
             <div class="col col-25" >
                 <h5 style="color:#fff;">Fan</h5>
                 <label class="toggle toggle-energized">
-                    <input type="checkbox">
+                    <input type="checkbox" ng-model="someObj.fstate" ng-true-value="1">
                     <div class="track">
                         <div class="handle"></div>
                     </div>
@@ -106,7 +106,7 @@
                 <h5 style="color:#fff;">Mode</h5>
                 <i class="icon ion-flame" style="font-size:210%;padding-bottom:1em;"></i>
                 <label class="toggle toggle-energized" style="margin-left:3px;margin-right:3px;">
-                    <input type="checkbox">
+                    <input type="checkbox" ng-model="someObj.tmode" ng-true-value="2" ng-false_value="1">
                     <div class="track">
                         <div class="handle"></div>
                     </div>

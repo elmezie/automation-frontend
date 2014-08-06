@@ -61,6 +61,19 @@ MainApp
             jsonp_get: { method: 'GET' }
         });
 })
+//.factory('socket', function ($rootScope) {
+//    var socket = io.connect('http://192.168.1.7:5006/test');
+//    return {
+//        on: function (eventName, callback) {
+//            socket.on(eventName, function () {
+//                var args = arguments;
+//                $rootScope.$apply(function () {
+//                    callback.apply(socket, args);
+//                });
+//            });
+//        }
+//    };
+//})
 
 .factory('LoaderService', function($rootScope, $ionicLoading) {
   return {
